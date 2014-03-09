@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.example"
+        versionCode="10" 
+        version   = "0.0.3">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>SIS</name>
+
+    <description>
+        School Information Service
+    </description>
+
+    <author email="help@sis.htlinn.ac.at">
+        Matthias Klotz
+    </author>
+
+    <icon src="images/icon.png" />
+
+    <access origin="http://sis.htlinn.ac.at"/>
+    <access origin="http://sis.htlinn.ac.at/*"/>
+
+    <preference name="permissions"              value="none"/>
+    <preference name="fullscreen"               value="true" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="webviewbounce"            value="true" />           <!-- ios: control whether 
+    the screen 'bounces' when scrolled beyond the top -->
+    <preference name="android-installLocation"  value="preferExternal" />   
+    <preference name="EnableViewportScale"      value="true" />
+
+
+
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.android.myap" android:versionCode="1">
+        <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true"
+        />
+        <uses-permission android:name="android.permission.INTERNET" />
+
+
+    </manifest>
+
+
+</widget>

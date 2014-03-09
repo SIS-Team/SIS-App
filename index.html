@@ -12,7 +12,7 @@
 	**********************************************************************************************/
 	function checkCookie() {
 		var script = document.createElement("script");
-		script.src = "http://sis.htlinn.ac.at/mobile/api/checkCookie.php";	
+		script.src = "http://sis.htlinn.ac.at/mobile/api/checkCookie.php?oSisApp";	
 		document.body.appendChild(script);	//falls der Nutzer bereits eingeloggt ist wird er hier weitergeleitet
 
 		window.setTimeout(function () {
@@ -32,12 +32,12 @@
 
 </script>
 </head>
-<body  style="display: none;">
-<img src='http://sis.htlinn.ac.at/mobile/images/ConnectionCheckPicture.png' onerror='alert("Connection dead");' />
+<body  style="display: none;" onload="checkCookie()">
+<img src='http://sis.htlinn.ac.at/mobile/images/ConnectionCheckPicture.png?oSisApp' onerror='alert("Connection dead");' />
 	<div class="header">
-		<img alt="http://sis.htlinn.ac.at/mobile/api/login.php" src="./images/Header_Interface.png" width="100%">
+		<img alt="HeaderPicture" src="./images/Header_Interface.png" width="100%">
 	</div>
-	<form name="form" action="http://sis.htlinn.ac.at/mobile/api/login.php" method="POST" target="iframe0">
+	<form name="form" action="http://sis.htlinn.ac.at/mobile/api/login.php?oSisApp" method="POST" target="iframe0">
 		Benutzername:<br>
 		<input type="text" name="username"><br>
 		Passwort:<br>   

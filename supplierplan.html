@@ -4,7 +4,12 @@
 	<script src="js/jquery.js" type="text/javascript"></script>
 	<!--<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>-->
 	<script src="js/UrlListener.js" type="text/javascript"></script>
-	<script src="http://sis.htlinn.ac.at/mobile/api/substitudes.php" type="text/javascript"></script>
+	<script src="http://sis.htlinn.ac.at/mobile/api/substitudes.php?oSisApp" type="text/javascript"></script>
+	<script type="text/javascript">
+		if(teacher=="0"){
+			classColumn.style.display='block';
+		}
+	</script>
 
 </head>
 <body>
@@ -21,10 +26,11 @@
 
 		<!--Die Kopfzeile der Supplierplantabelle wird generiert-->
 		<table border="1" align="center" id="tabelle" style="width:100%;">
-			<tr>
+			<tr id = "tableHeader">
 			    <th>Tag</th>
 			    <th>Stunde</th>
 			    <th>Fach</th>
+			    <th id="classColumn"style="display:none">Klasse</th>
 			    <th>zu Supplieren durch</th>
 			    <th>Bemerkung</th>
 		  	</tr>

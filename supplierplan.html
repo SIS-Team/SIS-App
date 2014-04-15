@@ -4,18 +4,17 @@
 	<script src="js/jquery.js" type="text/javascript"></script>
 	<!--<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>-->
 	<script src="js/UrlListener.js" type="text/javascript"></script>
+	<script src="js/osDetection.js" type="text/javascript"></script>
+	<!--<script src="js/supplPopup.js" type="text/javascript"></script>-->
 	<script src="http://sis.htlinn.ac.at/mobile/api/substitudes.php?oSisApp" type="text/javascript"></script>
-	<script type="text/javascript">
-		if(teacher=="0"){
-			classColumn.style.display='block';
-		}
-	</script>
+
+	<link rel="stylesheet" type="text/css" href="css/popup.css">
+	
 
 </head>
 <body>
-<div id="wrap">
 	
-	<link rel="stylesheet" type="text/css" href="./css/main.css">
+
 	<!--<div class="header">
 		<img alt="" src="./images/Header_Interface.png" width="100%">
 	</div>-->
@@ -39,8 +38,16 @@
 		<a href="javascript:location.reload()">Aktualisieren</a>
 	</div>
 
-</div>
 
+	<div class="PopupCon">
+		<div class="Popup">
+			<p id="popupID">
+			
+			</p>
+		</div>
+	</div>
+
+	<div id="overlay" class="closePopup"></div>
 
 
 </body>

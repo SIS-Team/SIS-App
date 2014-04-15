@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.example"
-        versionCode="10" 
-        version   = "0.0.3">
+        id        = "SIS-App"
+        versionCode="11" 
+        version   = "1.1.0">
 
     <!-- versionCode is optional and Android only -->
 
@@ -17,7 +17,54 @@
         Matthias Klotz
     </author>
 
+
+    <!--------->
+    <!--ICONS-->
+    <!--------->
+
     <icon src="images/icon.png" />
+
+    <!-- iPhone / iPod Touch  -->
+    <icon src="images/icon/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
+    <icon src="images/icon/ios/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+
+    <!-- iPad -->
+    <icon src="images/icon/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="images/icon/ios/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+
+    <!-- Settings Icon -->
+    <icon src="images/icon/ios/icon-small.png" gap:platform="ios" width="29" height="29" />
+    <icon src="images/icon/ios/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+    <!-- Spotlight Icon -->
+    <icon src="images/icon/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="images/icon/ios/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+
+
+    <!----------------->
+    <!--SPLASHSCREENS-->
+    <!----------------->
+
+    <gap:splash src="images/splash.png" />
+    <gap:splash src="images/splash.jpg" gap:platform="winphone" />
+    
+
+    <!-- iPhone and iPod touch -->
+    <gap:splash src="images/splash/ios/Default.png" gap:platform="ios" width="320" height="480" />
+    <gap:splash src="images/splash/ios/Default@2x.png" gap:platform="ios" width="640" height="960" />
+
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <gap:splash src="images/splash/ios/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
+
+    <!-- iPad -->
+    <gap:splash src="images/splash/ios/Default-Portrait.png" gap:platform="ios" width="768" height="1024" />
+    <gap:splash src="images/splash/ios/Default-Landscape.png" gap:platform="ios" width="1024" height="768" />
+
+    <!-- Retina iPad -->
+    <gap:splash src="images/splash/ios/Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
+    <gap:splash src="images/splash/ios/Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />
+
+   
 
     <access origin="http://sis.htlinn.ac.at"/>
     <access origin="http://sis.htlinn.ac.at/*"/>

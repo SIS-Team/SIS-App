@@ -10,14 +10,19 @@
 	/**********************************************************************************************
 	Überprüfung ob bereits eine Session geöffnet ist 	(wird sofort nach Start der App ausgeführt)
 	**********************************************************************************************/
+
 	function checkCookie() {
 		var script = document.createElement("script");
 		script.src = "http://sis.htlinn.ac.at/mobile/api/checkCookie.php?oSisApp";	
 		document.body.appendChild(script);	//falls der Nutzer bereits eingeloggt ist wird er hier weitergeleitet
+	//	document.getElementsByTagName("head")[0].appendChild(script);
 
-		window.setTimeout(function () {
-			document.body.style.display = "block";	//die Seite wird kurzzeitig ausgeblendet damit während der Überprüfung und Weiterleitung(falls angemeldet) nichts angezeigt wird
-		}, 1000)
+	}
+
+	function checkCookie2(){
+		saveLogin();
+		window.setTimeout(checkCookie, 1500);
+		window.setTimeout(loginFailed, 2500);
 	}
 
 	function loginFailed(){
@@ -25,27 +30,57 @@
 
 	}
 
+	function saveLogin(){
+		if(document.getElementById("keepLogin").checked){
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			window.localStorage.setItem("id", username);
+			window.localStorage.setItem("pw", password);
+		}
+	}
+
+
+
+	function fillForm(){
+
+		document.getElementById("username").value = window.localStorage.getItem("id");
+		document.getElementById("password").value = window.localStorage.getItem("pw");
+		
+		if(window.localStorage.getItem("id"))
+			document.getElementById("submitButton").click();
+		
+		window.setTimeout(function () {
+			document.body.style.display = "block";	//die Seite wird kurzzeitig ausgeblendet damit während der Überprüfung und Weiterleitung(falls angemeldet) nichts angezeigt wird
+		}, 500);
+
+	}
+
 	/*************************************************************************************
 	Funktion zum Übertragen von Benutzernamen und Passwort an die LoginRoutine(login.php)
 	**************************************************************************************/
-
+	//checkAtStart();
 
 </script>
 </head>
-<body  style="display: none;" onload="checkCookie()">
+<body  style="display: none;" onload="fillForm()">
 <img src='http://sis.htlinn.ac.at/mobile/images/ConnectionCheckPicture.png?oSisApp' onerror='alert("Connection dead");' />
 	<div class="header">
 		<img alt="HeaderPicture" src="./images/Header_Interface.png" width="100%">
 	</div>
-	<form name="form" action="http://sis.htlinn.ac.at/mobile/api/login.php?oSisApp" method="POST" target="iframe0">
+	<form id="form"name="form" action="http://sis.htlinn.ac.at/mobile/api/login.php?oSisApp" method="POST" target="iframe0" onsubmit="checkCookie2();" onload="fillForm()">
 		Benutzername:<br>
-		<input type="text" name="username"><br>
+		<input type="text" id="username" name="username"><br>
 		Passwort:<br>   
-		<input type="password" name="password"><br>
-		<input type="submit" value="Login">
+		<input type="password" id="password" name="password"><br>
+		<input type="checkbox" id="keepLogin" name="keepLogin" value="1"> Angemeldet bleiben<br>
+		
+		<input id="submitButton" type="submit" value="Login">
 	</form>
+	<br>
+	<br>
 	<a href="https://sis.htlinn.ac.at/impressum/?js#responsible">Impressum</a>
-	<iframe name="iframe0" src="" onload="checkCookie()" style="display: none; height: 1px; width: 1px; overflow: hidden"></iframe>
+	<iframe id="iframe" name="iframe0" src="" style="display: none; height: 1px; width: 1px; overflow: hidden"></iframe>
 	
+
 </body>
 </html>

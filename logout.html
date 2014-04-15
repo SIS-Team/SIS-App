@@ -9,7 +9,9 @@
 		var script = document.createElement("script");
 		script.src = "http://sis.htlinn.ac.at/mobile/api/logout.php?oSisApp";
 		document.body.appendChild(script);
+		window.localStorage.clear();
 	}
+
 </script>
 <body onload="logout()">
 	Ausloggen...

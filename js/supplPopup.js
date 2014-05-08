@@ -8,7 +8,7 @@ $( document ).ready(function() {
 			var aLesson = document.getElementById(id).getAttribute("data-substitude");
             
 
-			var infoNew = "<b>" + subsObject[aLesson].clName + "</b> <br>" + subsObject[aLesson].suShort + "<br>" + subsObject[aLesson].teShort;
+			var infoNew = "<b>" + subsObject[aLesson].clName + "</b> <br>" + subsObject[aLesson].suShort + "<br>" + subsObject[aLesson].teDisplay;
 
 			if(subsObject[aLesson].roName)
 							var infoNew = infoNew + "<br>" + subsObject[aLesson].roName;

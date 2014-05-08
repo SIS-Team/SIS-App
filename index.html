@@ -15,8 +15,6 @@
 		var script = document.createElement("script");
 		script.src = "http://sis.htlinn.ac.at/mobile/api/checkCookie.php?oSisApp";	
 		document.body.appendChild(script);	//falls der Nutzer bereits eingeloggt ist wird er hier weitergeleitet
-	//	document.getElementsByTagName("head")[0].appendChild(script);
-
 	}
 
 	function checkCookie2(){
@@ -27,6 +25,7 @@
 
 	function loginFailed(){
 		document.body.innerHTML += '<h1 style=\"color: red;\">Benutzername oder Passwort falsch!</h1>';
+		window.localStorage.clear();
 
 	}
 
@@ -63,14 +62,14 @@
 </script>
 </head>
 <body  style="display: none;" onload="fillForm()">
-<img src='http://sis.htlinn.ac.at/mobile/images/ConnectionCheckPicture.png?oSisApp' onerror='alert("Connection dead");' />
+<img src='http://sis.htlinn.ac.at/mobile/images/ConnectionCheckPicture.png?oSisApp' style="display: none;" onerror='alert("Connection dead");' />
 	<div class="header">
 		<img alt="HeaderPicture" src="./images/Header_Interface.png" width="100%">
 	</div>
 	<form id="form"name="form" action="http://sis.htlinn.ac.at/mobile/api/login.php?oSisApp" method="POST" target="iframe0" onsubmit="checkCookie2();" onload="fillForm()">
 		Benutzername:<br>
 		<input type="text" id="username" name="username"><br>
-		Passwort:<br>   
+		Passwort:<br> 
 		<input type="password" id="password" name="password"><br>
 		<input type="checkbox" id="keepLogin" name="keepLogin" value="1"> Angemeldet bleiben<br>
 		
@@ -78,8 +77,9 @@
 	</form>
 	<br>
 	<br>
-	<a href="https://sis.htlinn.ac.at/impressum/?js#responsible">Impressum</a>
 	<iframe id="iframe" name="iframe0" src="" style="display: none; height: 1px; width: 1px; overflow: hidden"></iframe>
+	<a href="https://sis.htlinn.ac.at/impressum/?js#responsible">Impressum</a>
+	
 	
 
 </body>

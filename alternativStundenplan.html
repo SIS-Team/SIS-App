@@ -22,7 +22,17 @@
 	
 	<!--<link rel="stylesheet" type="text/css" href="css/jqueryMobile.css">-->	
 	
-	
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			window.setTimeout(allTimetAllowed, 1000);
+		});
+		function allTimetAllowed()
+		{
+		if(teacher != "0")
+			document.getElementById("linkForTeacher").innerHTML=" Alle Stundenp.";
+		}
+	</script>
+
 	
 
 </head>
